@@ -4,7 +4,7 @@ import { faFacebook, faInstagram } from "@fortawesome/free-brands-svg-icons";
 
 const Footer = () => {
     return (
-        <div className="bg-black mt-120 text-white py-5">
+        <div className="bg-black mt-10 text-white py-5">
             <div className="container mx-auto flex flex-col md:flex-row items-center justify-between px-4">
                 <div className="text-center md:text-left">
                     <h3 className="text-lg font-semibold">Future Tech. All Rights Reserved.</h3>
