@@ -4,7 +4,7 @@ import { faFacebook, faInstagram } from "@fortawesome/free-brands-svg-icons";
 
 const Footer = () => {
   return (
-    <footer className="bg-black text-white text-center text-lg-start mt-20">
+    <footer className="bg-black text-white text-center text-lg-start ">
       <section className="flex flex-col lg:flex-row items-center justify-between p-4 border-b border-gray-700">
         <div className="hidden lg:block">
           <span>Get connected with us on social networks:</span>
