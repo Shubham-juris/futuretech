@@ -1,27 +1,27 @@
-import React from 'react'
+import React from "react";
 
 const Home = () => {
   return (
-<>  <div
-      className="relative w-full h-screen flex items-center justify-center bg-cover bg-center"
-      style={{
-        backgroundImage:
-          "url(' https://cdn.pixabay.com/photo/2019/07/14/16/27/pen-4337521_1280.jpg')",
-      }}
-    >
-      <div className="absolute inset-0 bg-pink bg-opacity-50"></div>
+    <>
+      {" "}
+      <div className="relative w-full h-screen flex items-center justify-center bg-cover bg-center"
+        style={{
+          backgroundImage:
+            "url(' https://cdn.pixabay.com/photo/2019/07/14/16/27/pen-4337521_1280.jpg')",
+        }}
+      >
+        <div className="absolute inset-0 bg-pink bg-opacity-50"></div>
 
-      <div className="relative text-center text-white px-6">
-        <h1 className="text-4xl md:text-6xl font-bold drop-shadow-lg">
-          Professional Tech For <br /> Your Business
-        </h1>
-        <p className="mt-4 text-lg max-w-2xl mx-auto text-gray-200">
-          Technology is the most effective way to change the world.
-        </p>
+        <div className="relative text-center text-white px-6">
+          <h1 className="text-4xl md:text-6xl font-bold drop-shadow-lg">
+            Professional Tech For <br /> Your Business
+          </h1>
+          <p className="mt-4 text-lg max-w-2xl mx-auto text-gray-200">
+            Technology is the most effective way to change the world.
+          </p>
+        </div>
       </div>
-    </div>
-
-<div className="max-w-5xl mx-auto px-4 py-10">
+      <div className="max-w-5xl mx-auto px-4 py-10">
         <div className="flex flex-col md:flex-row items-center justify-center gap-8">
           <img
             src="https://images.freeimages.com/images/premium/previews/1227/12275386-development-graph.jpg"
@@ -81,13 +81,9 @@ const Home = () => {
           </div>
         </div>
 
-        <div className="mt-16 text-center">
-          <h2 className="text-3xl font-semibold text-gray-700">Social</h2>
-          <div className="w-16 mx-auto border-b-2 border-gray-300 my-2"></div>
-        </div>
       </div>
-</>
-  )
-}
+    </>
+  );
+};
 
-export default Home
+export default Home;
