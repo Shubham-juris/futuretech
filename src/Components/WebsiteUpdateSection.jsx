@@ -2,8 +2,6 @@ import React from 'react';
 import img3 from '../assets/website/img3.jpg'
 import CommonButton from './CommonButton';
 
-
-
 const WebsiteUpdateSection = () => {
   return (
     <section className="max-w-6xl mx-auto px-6 py-16 flex  md:flex-row flex-col-reverse items-center gap-12">
