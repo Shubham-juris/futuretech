@@ -1,7 +1,7 @@
 import React from 'react';
 import img3 from '../assets/website/img3.jpg'
 import CommonButton from './CommonButton';
-CommonButton
+
 
 
 const WebsiteUpdateSection = () => {
