@@ -1,6 +1,6 @@
 import React from 'react'
-import pic from '../assets/managed it/pic.jpg'
-
+import Hardwares from "../assets/hardware/hardware.jpg"
+import wifi from "../assets/wifi/wifi.jpg"
 const Hardware = () => {
   return (
   <>
@@ -24,25 +24,25 @@ const Hardware = () => {
           </div>
           <div>
             <img
-              src={pic}
+              src={Hardwares}
               alt="Server hardware"
-              className="w-full rounded-lg shadow-lg h-65"
+              className="w-full  shadow-lg h-65"
             />
           </div>
         </div>
       </div>
       {/* {network section start in this line  } */}
-      <div className="bg-gray-100 min-h-screen p-8 flex flex-col items-center">
+      <div className="bg-white text-gray-900 py-2 px-6 max-w-5xl mx-auto">
         <div className="max-w-4xl text-center">
-          <h1 className="text-4xl font-bold text-gray-500">
-            <span className="text-gray-600 py-110 px-6 max-w-5xl mx-auto">
+          <h1 className="text-4xl font-bold text-gray-500 py-8">
+            <span className="text-gray-600 px-6 max-w-5xl mx-auto">
               Wireless that works.
             </span>
           </h1>
         </div>
 
         <div className="mt-6 flex flex-col md:flex-row items-center md:items-start md:space-x-8 max-w-4xl">
-          <div className="flex-1 text-left py-10">
+          <div className="flex-1 text-left ">
             <h2 className="text-2xl font-semibold text-gray-800">
               Smarter, Simpler Networks.
             </h2>
@@ -70,13 +70,14 @@ const Hardware = () => {
             </ul>
           </div>
 
-          <div className="mt-6 md:mt-0">
+          <div>
             <img
-              src={pic}
+              src={wifi}
               alt="Wireless Network"
-              className="w-full rounded-lg shadow-lg h-65"
+              className="w-full  shadow-lg h-65"
             />
           </div>
+       
         </div>
       </div>
   </>
