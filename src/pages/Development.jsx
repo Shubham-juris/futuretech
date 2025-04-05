@@ -1,13 +1,13 @@
 import React from "react";
-import img from "../assets/development/img.jpg";
-
+import programming from "../assets/Programming/programming.jpg"
+import img from "../assets/development/img.jpg"
 
 const Development = () => {
   return (
     <>
       <div className="flex flex-col md:flex-row items-center justify-center gap-8 w-full px-4">
         <img
-          src={img}
+          src={programming}
           alt="Development"
           className="w-full rounded-lg shadow-lg"
         />

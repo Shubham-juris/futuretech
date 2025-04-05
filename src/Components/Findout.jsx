@@ -9,7 +9,7 @@ function Findout() {
       para: "Not all websites are created equal. If your father's brother's nephew's cousin's former roommate makes websites, you'll probably want to contact us instead. We understand the nuances of building a quality website that will be able to incorporate everything your business needs today or in the future. ",
     },
     {
-      heading: 'Know Your Audience, And Reach Them All',
+      heading: 'Audience Reach ',
       para: "Design from all angles. You may not be your target audience, so it's important to understand how different usere interact with a website and design your site to maximize potential leads. ",
     },
     {
