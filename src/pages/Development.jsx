@@ -1,6 +1,7 @@
 import React from "react";
 import img from "../assets/development/img.jpg";
 
+
 const Development = () => {
   return (
     <>
@@ -71,7 +72,6 @@ const Development = () => {
           </button>
         </div>
       </div>
-
       <div className="max-w-5xl mx-auto px-4 py-16"></div>
     </>
   );

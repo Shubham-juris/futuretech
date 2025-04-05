@@ -1,5 +1,7 @@
 import React from "react";
 import img from '../assets/website/img2.jpg'
+import CommonButton from "../Components/CommonButton";
+
 const Managed = () => {
   return (
     <>
@@ -45,9 +47,7 @@ const Managed = () => {
           Our remote support and call center is currently providing technical
           IT support and service to clients.
         </p>
-        <button className="bg-gray-500 text-white px-6 py-3 mt-8 rounded-lg hover:bg-blue-600 focus:ring-2 focus:ring-blue-300 transition">
-          Find Out More
-        </button>
+        <CommonButton />
       </div>
 
       <div className="mt-10 md:mt-30 text-center">
@@ -62,9 +62,7 @@ const Managed = () => {
         business's infrastructure and support needs.
       </p>
       <div className="text-center mt-5">
-        <button className="bg-gray-500 text-white px-6 py-3 mt-8 rounded-lg hover:bg-blue-600 focus:ring-2 focus:ring-blue-300 transition">
-          Find Out More
-        </button>
+      <CommonButton/>
       </div>
 
 <div className="bg-amber-100">
