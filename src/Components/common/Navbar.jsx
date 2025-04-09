@@ -63,6 +63,7 @@ export default function Navbar() {
         </div>
       </div>
       
+      
       {isMobileMenuOpen && (
         <div className="lg:hidden bg-black border-t border-gray-800">
           <div className="container mx-auto px-4 py-2">
