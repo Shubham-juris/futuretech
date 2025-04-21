@@ -1,103 +1,119 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faFacebook, faInstagram } from "@fortawesome/free-brands-svg-icons";
+import {
+  faFacebookF,
+  faInstagram,
+  faTwitter,
+  faLinkedin,
+} from "@fortawesome/free-brands-svg-icons";
+import { faEnvelope, faHome, faPhone } from "@fortawesome/free-solid-svg-icons";
 
 const Footer = () => {
   return (
-    <footer className="bg-black text-white text-center text-lg-start ">
-      <section className="flex flex-col lg:flex-row items-center justify-between p-4 border-b border-gray-700">
-        <div className="hidden lg:block">
-          <span>Get connected with us on social networks:</span>
-        </div>
-        <div className="flex space-x-4">
+    <footer className="bg-black text-white pt-10">
+      <div className="flex flex-col md:flex-row items-center justify-between px-6 py-4 border-b border-gray-700">
+        <h2 className="text-lg font-semibold mb-4 md:mb-0">Follow Us</h2>
+        <div className="flex space-x-4 text-xl">
           {[
-            "facebook-f",
-            "twitter",
-            "google",
-            "instagram",
-            "linkedin",
-            "github",
-          ].map((icon) => (
-            <a key={icon} href="#" className="text-white hover:text-gray-400">
-              <i className={`fab fa-${icon}`}></i>
+            {
+              icon: faFacebookF,
+              href: "https://facebook.com",
+              color: "text-blue-600",
+            },
+            {
+              icon: faTwitter,
+              href: "https://twitter.com",
+              color: "text-sky-400",
+            },
+            {
+              icon: faInstagram,
+              href: "https://instagram.com",
+              color: "text-pink-500",
+            },
+            {
+              icon: faLinkedin,
+              href: "https://linkedin.com",
+              color: "text-blue-400",
+            },
+          ].map(({ icon, href, color }, idx) => (
+            <a
+              key={idx}
+              href={href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={`hover:scale-110 transition-transform duration-300 ${color}`}
+            >
+              <FontAwesomeIcon icon={icon} />
             </a>
           ))}
         </div>
-      </section>
+      </div>
 
-      <section className="container mx-auto text-center md:text-left mt-5 px-6 mb-5">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          <div>
-            <h6 className="uppercase font-bold mb-4 flex items-center">
-              <i className="fas fa-gem mr-2"></i> Future Tech
-            </h6>
-            <p>
-              Future Tech refers to advancements, innovations, and emerging
-              trends in science and technology that are expected to shape the
-              future.
-            </p>
-          </div>
-          <div>
-            <h6 className="uppercase font-bold mb-4">Links</h6>
-            {["Services", "About us"].map((product) => (
-              <p key={product}>
-                <a href="#" className="text-white hover:underline">
-                  {product}
-                </a>
-              </p>
-            ))}
-          </div>
-          <div>
-            <h6 className="uppercase font-bold mb-4">Useful Links</h6>
-            {["Hardware", "Marketing", "Development", "Help"].map((link) => (
-              <p key={link}>
-                <a href="#" className="text-white hover:underline">
-                  {link}
-                </a>
-              </p>
-            ))}
-          </div>
-          <div>
-            <h6 className="uppercase font-bold mb-4">Contact</h6>
-            <p>
-              <i className="fas fa-home mr-2"></i>Canada
-            </p>
-            <p>
-              <i className="fas fa-envelope mr-2"></i> info@xyz.com
-            </p>
-            <p>
-              <i className="fas fa-phone mr-2"></i> + 01 234 567 88
-            </p>
-            <div className="flex space-x-4 mt-4">
-              <a
-                href="https://facebook.com"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <FontAwesomeIcon
-                  icon={faFacebook}
-                  className="text-blue-600 text-xl ml-5"
-                />
-              </a>
-              <a
-                href="https://instagram.com"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <FontAwesomeIcon
-                  icon={faInstagram}
-                  className="text-pink-500 text-xl"
-                />
-              </a>
-            </div>
-          </div>
+      <div className="container mx-auto px-6 py-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-10 text-sm">
+        <div>
+          <h6 className="uppercase font-bold mb-4 text-lg">Future Tech</h6>
+          <p className="text-gray-400 leading-relaxed">
+            Future Tech represents the innovation and advancement shaping
+            tomorrow’s world — AI, blockchain, quantum computing, and more.
+          </p>
         </div>
-      </section>
 
-      <div className="text-center p-4 bg-gray-900">
-        <a className="text-white font-bold" href="https://mdbootstrap.com/">
+        <div>
+          <h6 className="uppercase font-bold mb-4 text-lg">Company</h6>
+          {["Services", "About Us", "Careers", "Blog"].map((item) => (
+            <p key={item}>
+              <a
+                href="#"
+                className="text-gray-400 hover:text-white transition duration-200"
+              >
+                {item}
+              </a>
+            </p>
+          ))}
+        </div>
+
+        <div>
+          <h6 className="uppercase font-bold mb-4 text-lg">Resources</h6>
+          {["Hardware", "Marketing", "Development", "Help Center"].map(
+            (item) => (
+              <p key={item}>
+                <a
+                  href="#"
+                  className="text-gray-400 hover:text-white transition duration-200"
+                >
+                  {item}
+                </a>
+              </p>
+            )
+          )}
+        </div>
+
+        <div>
+          <h6 className="uppercase font-bold mb-4 text-lg">Contact</h6>
+          <p className="mb-2 text-gray-400 flex items-center">
+            <FontAwesomeIcon icon={faHome} className="mr-2" />
+            Canada
+          </p>
+          <p className="mb-2 text-gray-400 flex items-center">
+            <FontAwesomeIcon icon={faEnvelope} className="mr-2" />
+            info@xyz.com
+          </p>
+          <p className="text-gray-400 flex items-center">
+            <FontAwesomeIcon icon={faPhone} className="mr-2" />
+            +01 234 567 88
+          </p>
+        </div>
+      </div>
+
+      <div className="bg-gray-900 text-center p-4 text-sm text-gray-400">
+        © {new Date().getFullYear()}{" "}
+        <a
+          href="https://mdbootstrap.com/"
+          className="text-white font-semibold hover:underline"
+        >
           Future Tech
-        </a>
+        </a>{" "}
+        — All Rights Reserved.
       </div>
     </footer>
   );

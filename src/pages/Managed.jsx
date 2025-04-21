@@ -1,8 +1,31 @@
 import React from "react";
-import img from '../assets/website/img2.jpg'
+import { motion } from "framer-motion";
+import img from '../assets/website/img2.jpg';
 import CommonButton from "../Components/CommonButton";
 
+// Animation variants for staggering words
+const staggerText = {
+  hidden: {},
+  visible: {
+    transition: {
+      staggerChildren: 0.05, // Stagger each word by 0.05 seconds
+    },
+  },
+};
+
+const fadeInUp = {
+  hidden: { opacity: 0, y: 20 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.3 } },
+};
+
 const Managed = () => {
+  // Lines for the paragraph that needs the animation
+  const paragraphLines = [
+    "Are you unhappy with your current level of IT support?",
+    "Whether we helped build your applications or not, we're here to help maintain them.",
+    "We provide desktop support, software support, maintenance, network infrastructure, and project management.",
+  ];
+
   return (
     <>
       <div className="mt-10 text-center text-gray-500">
@@ -13,12 +36,26 @@ const Managed = () => {
       <div className="flex flex-col md:flex-row items-center mt-10 md:mt-20 justify-center gap-8 px-4 md:px-16">
         <div className="text-center md:text-left md:w-1/2">
           <h2 className="text-xl font-semibold">Serving IT Services</h2>
-          <p className="mt-2 text-gray-700">
-            Are you unhappy with your current level of IT support? Whether we
-            helped build your applications or not, we're here to help maintain
-            them. We provide desktop support, software support, maintenance,
-            network infrastructure, and project management.
-          </p>
+          <motion.div
+            variants={staggerText}
+            initial="hidden"
+            animate="visible"
+            className="mt-2 text-gray-700"
+          >
+            {paragraphLines.map((line, lineIndex) => (
+              <motion.div key={lineIndex} variants={fadeInUp} className="mb-4">
+                {line.split(" ").map((word, wordIndex) => (
+                  <motion.span
+                    key={wordIndex}
+                    variants={fadeInUp}
+                    className="inline-block mr-1"
+                  >
+                    {word}
+                  </motion.span>
+                ))}
+              </motion.div>
+            ))}
+          </motion.div>
         </div>
         <img
           src={img}
@@ -62,56 +99,56 @@ const Managed = () => {
         business's infrastructure and support needs.
       </p>
       <div className="text-center mt-5">
-      <CommonButton/>
+        <CommonButton />
       </div>
 
-<div className="bg-amber-100">
-      <div className="grid grid-cols-1  md:grid-cols-3 gap-6 mt-10 md:mt-20 px-4 md:px-16">
-        <div className="md:col-span-2 flex flex-col md:flex-row space-x-0 md:space-x-4">
-          <div className="w-full md:w-1/2 text-center p-4">
-            <h4 className="font-semibold text-xl md:text-2xl">Desktop And User Support</h4>
-            <p className="text-center mt-4">
-              Technical assistance for computer systems, software, and hardware.
-              Includes troubleshooting, maintenance, and more.
-            </p>
+      <div className="bg-amber-100">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-10 md:mt-20 px-4 md:px-16">
+          <div className="md:col-span-2 flex flex-col md:flex-row space-x-0 md:space-x-4">
+            <div className="w-full md:w-1/2 text-center p-4">
+              <h4 className="font-semibold text-xl md:text-2xl">Desktop And User Support</h4>
+              <p className="text-center mt-4">
+                Technical assistance for computer systems, software, and hardware.
+                Includes troubleshooting, maintenance, and more.
+              </p>
+            </div>
+            <div className="w-full md:w-1/2 p-4 text-center">
+              <h3 className="font-semibold text-xl md:text-2xl">Network Infrastructure</h3>
+              <p className="text-center mt-4">
+                Covers routers, switches, servers, cables, and connectivity.
+              </p>
+            </div>
           </div>
-          <div className="w-full md:w-1/2 p-4 text-center">
-            <h3 className="font-semibold text-xl md:text-2xl">Network Infrastructure</h3>
+          <div className="text-center p-4">
+            <h4 className="font-semibold text-xl md:text-2xl">Backup</h4>
             <p className="text-center mt-4">
-              Covers routers, switches, servers, cables, and connectivity.
+              Protects against data loss, corruption, and system failures.
             </p>
           </div>
         </div>
-        <div className="text-center p-4">
-          <h4 className="font-semibold text-xl md:text-2xl">Backup</h4>
-          <p className="text-center mt-4">
-            Protects against data loss, corruption, and system failures.
-          </p>
-        </div>
-      </div>
 
-      <div className="grid grid-cols-1  md:grid-cols-3 gap-6 mt-10 md:mt-20 px-4 md:px-16">
-        <div className="md:col-span-2 flex flex-col md:flex-row space-x-0 md:space-x-4">
-          <div className="w-full md:w-1/2 text-center p-4">
-            <h4 className="font-semibold text-xl md:text-2xl">Server Maintenance</h4>
-            <p className="text-center mt-4">
-              Regular updates, monitoring, and security to ensure server performance.
-            </p>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-10 md:mt-20 px-4 md:px-16">
+          <div className="md:col-span-2 flex flex-col md:flex-row space-x-0 md:space-x-4">
+            <div className="w-full md:w-1/2 text-center p-4">
+              <h4 className="font-semibold text-xl md:text-2xl">Server Maintenance</h4>
+              <p className="text-center mt-4">
+                Regular updates, monitoring, and security to ensure server performance.
+              </p>
+            </div>
+            <div className="w-full md:w-1/2 p-4 text-center">
+              <h3 className="font-semibold text-xl md:text-2xl">Project Management</h3>
+              <p className="text-center mt-4">
+                Planning, execution, and resource allocation for IT projects.
+              </p>
+            </div>
           </div>
-          <div className="w-full md:w-1/2 p-4 text-center">
-            <h3 className="font-semibold text-xl md:text-2xl">Project Management</h3>
+          <div className="text-center p-4">
+            <h4 className="font-semibold text-xl md:text-2xl">Anti-virus And Anti-Malware</h4>
             <p className="text-center mt-4">
-              Planning, execution, and resource allocation for IT projects.
+              Security solutions to detect, prevent, and remove malicious software.
             </p>
           </div>
         </div>
-        <div className="text-center p-4">
-          <h4 className="font-semibold text-xl md:text-2xl">Anti-virus And Anti-Malware</h4>
-          <p className="text-center mt-4">
-            Security solutions to detect, prevent, and remove malicious software.
-          </p>
-        </div>
-      </div>
       </div>
     </>
   );
