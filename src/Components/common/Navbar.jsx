@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import logo from '../../assets/nabvar/logo.png';
+import logo from '../../assets/nabvar/logo.webp';
 
 const Link = ({ to, children, className }) => (
   <a href={to} className={className}>
@@ -15,8 +15,8 @@ export default function Navbar() {
   
   return (
     <nav className="bg-black sticky top-0 shadow-md z-50">
-      <div className="container mx-auto flex items-center justify-between px-4 py-3">
-        <img src={logoPlaceholder} alt="logo" width={70} />
+      <div className="container mx-auto flex items-center justify-between px-4 ">
+        <img src={logoPlaceholder} alt="logo" className='w-24 h-24' />
         
         <button 
           className="block lg:hidden text-white focus:outline-none"
