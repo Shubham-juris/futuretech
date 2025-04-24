@@ -1,7 +1,30 @@
 import React from "react";
+import { motion } from "framer-motion";
 import CommonButton from "../Components/CommonButton";
 import degitalMarketings from "../assets/degitalMarketing/degitalMarketing.jpg";
+
+// Animation variants for staggered animation
+const staggerText = {
+  hidden: {},
+  visible: {
+    transition: {
+      staggerChildren: 0.5, // Stagger each line by 0.5 seconds
+    },
+  },
+};
+
+const fadeInUp = {
+  hidden: { opacity: 0, y: 20 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
+};
+
 const Marketing = () => {
+  // Lines for the paragraph that needs the animation
+  const paragraphLines = [
+    "SEO, digital advertising, reputation management, content development and more – Future Tech can meet any digital needs you may have.",
+    "The digital world is always evolving, which is why you need an expert as your tour guide. Whether you’re looking to make an impact locally, across Canada, or on the international stage, Future Tech is determined to showcase your brand in front of the right people.",
+  ];
+
   return (
     <>
       <div className="mt-16 text-center">
@@ -18,18 +41,18 @@ const Marketing = () => {
             className="w-full md:w-1/2  shadow-lg"
           />
           <div className="text-center md:text-left">
-            <p className="text-xl font-semibold text-center">
-              SEO, digital advertising, reputation management, content
-              development and more – Future Tech can meet any digital needs you
-              may have.
-            </p>
-            <p className="mt-2 text-gray-700 text-center">
-              The digital world is always evolving, which is why you need an
-              expert as your tour guide. Whether you’re looking to make an
-              impact locally, across Canada, or on the international stage,
-              Future Tech is determined to showcase your brand in front of the
-              right people.
-            </p>
+            <motion.div
+              variants={staggerText}
+              initial="hidden"
+              animate="visible"
+              className="text-center"
+            >
+              {paragraphLines.map((line, lineIndex) => (
+                <motion.div key={lineIndex} variants={fadeInUp} className="mb-4">
+                  {line}
+                </motion.div>
+              ))}
+            </motion.div>
             <CommonButton text="Get Started" />
           </div>
         </div>
@@ -64,12 +87,12 @@ const Marketing = () => {
       </div>
       <div className="mt-15 text-center">
         <h2 className="text-1xl font-semibold text-gray-700">
-          Always talkd About ,realy done<br></br>right.
+          Always talked About, really done <br></br>right.
         </h2>
       </div>
       <div className="mt-10 text-center">
         <h2 className="">
-          Effective sco buget and consectetur adipisicing elit.<br></br>
+          Effective SEO budget and consectetur adipisicing elit.<br></br>
           Voluptatum, temporibus earum cupiditate sint magnam quasi<br></br>
           sunt facilis, distinctio harum asperiores illo? Aut vitae,<br></br>
           magnam eos quibusdam amet iste minima? <br></br>

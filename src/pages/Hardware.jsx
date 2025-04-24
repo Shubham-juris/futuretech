@@ -1,87 +1,294 @@
-import React from 'react'
-import Hardwares from "../assets/hardware/hardware.jpg"
-import wifi from "../assets/wifi/wifi.jpg"
+import React from "react";
+import { motion } from "framer-motion";
+import Hardwares from "../assets/hardware/HardwareImg.jpg";
+import wifi from "../assets/wifi/WirelessImg.jpg";
+
+// Animation variants for staggering words
+const staggerText = {
+  hidden: {},
+  visible: {
+    transition: {
+      staggerChildren: 0.05, // Stagger each word by 0.05 seconds
+    },
+  },
+};
+
+const fadeInUp = {
+  hidden: { opacity: 0, y: 20 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.3 } },
+};
+
 const Hardware = () => {
+  // Words for the hardware section paragraph
+  const hardwareParagraphWords = [
+    "“Good",
+    "enough”",
+    "rarely",
+    "is,",
+    "and",
+    "what",
+    "you",
+    "save",
+    "up-front",
+    "usually",
+    "ends",
+    "up",
+    "costing",
+    "more",
+    "in",
+    "the",
+    "long-term.",
+    "Your",
+    "IT",
+    "infrastructure",
+    "is",
+    "important,",
+    "so",
+    "don’t",
+    "settle",
+    "for",
+    "an",
+    "off-brand",
+    "solution.",
+    "Future",
+    "Tech",
+    "partners",
+    "with",
+    "quality",
+    "hardware",
+    "providers",
+    "to",
+    "ensure",
+    "the",
+    "equipment",
+    "we",
+    "recommend",
+    "not",
+    "only",
+    "works",
+    "—",
+    "it",
+    "lasts.",
+  ];
+
+  // Words for the wireless section first paragraph
+  const wirelessParagraph1Words = [
+    "A",
+    "stable",
+    "wireless",
+    "connection",
+    "offers",
+    "the",
+    "flexibility",
+    "and",
+    "convenience",
+    "that",
+    "wired",
+    "setups",
+    "can’t.",
+    "Future",
+    "Tech",
+    "specializes",
+    "in",
+    "designing",
+    "and",
+    "installing",
+    "wireless",
+    "mesh",
+    "networks",
+    "that",
+    "deliver",
+    "fast,",
+    "reliable",
+    "coverage",
+    "for",
+    "any",
+    "size",
+    "business.",
+  ];
+
+  // Words for the wireless section second paragraph
+  const wirelessParagraph2Words = [
+    "We’re",
+    "Open",
+    "Mesh",
+    "partners",
+    "—",
+    "using",
+    "encrypted,",
+    "self-healing",
+    "networks",
+    "with",
+    "built-in",
+    "failover.",
+  ];
+
+  // Words for the list items
+  const listItems = [
+    [
+      "Flexible",
+      "mounting",
+      "for",
+      "indoor",
+      "and",
+      "outdoor",
+      "use",
+    ],
+    [
+      "Cloud-connected",
+      "for",
+      "remote",
+      "monitoring",
+      "&",
+      "control",
+    ],
+    [
+      "Secure",
+      "Guest",
+      "WiFi",
+      "with",
+      "token-based",
+      "access",
+    ],
+    [
+      "Remote",
+      "updates",
+      "for",
+      "minimal",
+      "downtime",
+    ],
+    [
+      "Automatic",
+      "failover",
+      "when",
+      "a",
+      "node",
+      "goes",
+      "down",
+    ],
+  ];
+
   return (
-  <>
-   <div className="bg-white text-gray-900 py-16 px-6 max-w-5xl mx-auto">
-        <h1 className="text-4xl font-bold text-gray-500 text-center mb-4">
+    <>
+      {/* Hardware Section */}
+      <section className="bg-white text-gray-900 py-16 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto">
+        <h2 className="text-3xl sm:text-4xl font-bold text-center text-gray-700 mb-12">
           Hardware matters.
-        </h1>
-        <div className="grid md:grid-cols-2 gap-8 items-center py-10">
+        </h2>
+
+        <div className="grid md:grid-cols-2 gap-8 sm:gap-10 items-center">
           <div>
-            <h2 className="text-xl font-semibold mb-4">
+            <h3 className="text-xl sm:text-2xl font-semibold mb-4 text-gray-800">
               It’s OK to judge a computer by its cover.
-            </h2>
-            <p className="text-gray-600 mb-4">
-              “Good enough” rarely is, and what you save up-front usually ends
-              up costing more in the long-term. Your IT infrastructure is
-              important, don’t settle for an off-brand solution. Future Tech
-              partners with quality hardware providers to be sure that the
-              equipment and solution we’re recommending isn’t just going to work
-              well, it’ll also last.
-            </p>
+            </h3>
+            <motion.div
+              variants={staggerText}
+              initial="hidden"
+              animate="visible"
+              className="text-gray-600 mb-4 text-sm sm:text-base"
+            >
+              {hardwareParagraphWords.map((word, index) => (
+                <motion.span
+                  key={index}
+                  variants={fadeInUp}
+                  className="inline-block mr-1"
+                >
+                  {word}
+                </motion.span>
+              ))}
+            </motion.div>
           </div>
           <div>
             <img
               src={Hardwares}
-              alt="Server hardware"
-              className="w-full  shadow-lg h-65"
+              alt="Close-up view of server rack hardware"
+              className="w-full max-h-80 object-cover rounded-xl shadow-lg"
             />
           </div>
         </div>
-      </div>
-      {/* {network section start in this line  } */}
-      <div className="bg-white text-gray-900 py-2 px-6 max-w-5xl mx-auto">
-        <div className="max-w-4xl text-center">
-          <h1 className="text-4xl font-bold text-gray-500 py-8">
-            <span className="text-gray-600 px-6 max-w-5xl mx-auto">
-              Wireless that works.
-            </span>
-          </h1>
-        </div>
+      </section>
 
-        <div className="mt-6 flex flex-col md:flex-row items-center md:items-start md:space-x-8 max-w-4xl">
-          <div className="flex-1 text-left ">
-            <h2 className="text-2xl font-semibold text-gray-800">
+      {/* Divider */}
+      <div className="my-12 sm:my-16 border-t border-gray-200 w-11/12 mx-auto" />
+
+      {/* Wireless Network Section */}
+      <section className="bg-white text-gray-900 py-16 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto">
+        <h2 className="text-3xl sm:text-4xl font-bold text-center text-gray-700 mb-12">
+          Wireless that works.
+        </h2>
+
+        <div className="flex flex-col-reverse md:flex-row items-center gap-8 sm:gap-10">
+          <div className="flex-1">
+            <h3 className="text-xl sm:text-2xl font-semibold text-gray-800">
               Smarter, Simpler Networks.
-            </h2>
-            <p className="mt-4 text-gray-600">
-              A good, stable wireless connection can provide a lot of
-              convenience and flexibility that isn’t always available when a
-              wired connection is required. Future Tech is an Open Mesh partner.
-              We specialize in designing and installing wireless mesh networks
-              to provide stable and fast wireless coverage to any size of
-              building and business.
-            </p>
-            <p className="mt-4 text-gray-600">
-              Open Mesh technology combines multiple access points together in a
-              self-healing encrypted mesh network with automatic failover.
-            </p>
-            <ul className="mt-4 list-disc list-inside text-gray-600">
-              <li>Flexible mounting for indoor and outdoor installation.</li>
-              <li>Cloud-connected for remote monitoring and management.</li>
-              <li>Secured and isolated Guest WiFi options, with tokens.</li>
-              <li>
-                Remote update scheduling for minimal disruption and maximum
-                security.
-              </li>
-              <li>Automatic failover when one node fails.</li>
-            </ul>
+            </h3>
+            {/* First Paragraph Animation */}
+            <motion.div
+              variants={staggerText}
+              initial="hidden"
+              animate="visible"
+              className="mt-4 text-gray-600 text-sm sm:text-base"
+            >
+              {wirelessParagraph1Words.map((word, index) => (
+                <motion.span
+                  key={index}
+                  variants={fadeInUp}
+                  className="inline-block mr-1"
+                >
+                  {word}
+                </motion.span>
+              ))}
+            </motion.div>
+            {/* Second Paragraph Animation */}
+            <motion.div
+              variants={staggerText}
+              initial="hidden"
+              animate="visible"
+              className="mt-4 text-gray-600 text-sm sm:text-base"
+            >
+              {wirelessParagraph2Words.map((word, index) => (
+                <motion.span
+                  key={index}
+                  variants={fadeInUp}
+                  className="inline-block mr-1"
+                >
+                  {word}
+                </motion.span>
+              ))}
+            </motion.div>
+            {/* List Items Animation */}
+            <motion.ul
+              variants={staggerText}
+              initial="hidden"
+              animate="visible"
+              className="mt-4 list-disc list-inside text-gray-600 text-sm sm:text-base space-y-1"
+            >
+              {listItems.map((itemWords, itemIndex) => (
+                <motion.li key={itemIndex} variants={fadeInUp}>
+                  {itemWords.map((word, wordIndex) => (
+                    <motion.span
+                      key={wordIndex}
+                      variants={fadeInUp}
+                      className="inline-block mr-1"
+                    >
+                      {word}
+                    </motion.span>
+                  ))}
+                </motion.li>
+              ))}
+            </motion.ul>
           </div>
-
-          <div>
+          <div className="flex-1">
             <img
               src={wifi}
-              alt="Wireless Network"
-              className="w-full  shadow-lg h-65"
+              alt="Mesh wireless networking setup"
+              className="w-full max-h-80 object-cover rounded-xl shadow-lg"
             />
           </div>
-       
         </div>
-      </div>
-  </>
-  )
-}
+      </section>
+    </>
+  );
+};
 
 export default Hardware;
