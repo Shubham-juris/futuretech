@@ -70,15 +70,16 @@ const Footer = () => {
           <h6 className="uppercase font-bold mb-4 text-lg text-white">Contact</h6>
           <p className="mb-2 flex items-center">
             <FontAwesomeIcon icon={faHome} className="mr-2" />
-            Canada
+      
+120 32 Westwinds Cres NE, Calgary, AB, Canada, Alberta
           </p>
           <p className="mb-2 flex items-center">
             <FontAwesomeIcon icon={faEnvelope} className="mr-2" />
-            info@xyz.com
+          futuretech934@gmail.com
           </p>
           <p className="flex items-center">
             <FontAwesomeIcon icon={faPhone} className="mr-2" />
-            +01 234 567 88
+            +1 587-432-5466
           </p>
         </div>
       </div>
