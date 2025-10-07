@@ -7,8 +7,17 @@ import {
   faLinkedin,
 } from "@fortawesome/free-brands-svg-icons";
 import { faEnvelope, faHome, faPhone } from "@fortawesome/free-solid-svg-icons";
-
+import { Link } from "react-router-dom";
 const Footer = () => {
+  const links = [
+    { name: "Home", path: "/" },
+    { name: "Hardware", path: "/Hardware" },
+    { name: "Managed Services", path: "/Managed" },
+    { name: "Marketing", path: "/Marketing" },
+    { name: "Development", path: "/Development" },
+    { name: "Career", path: "/Career" },
+    { name: "ContactUs", path: "/ContactUs" },
+  ];
   return (
     <footer className="bg-black text-white pt-10 text-sm sm:text-base">
       <div className="max-w-screen-xl mx-auto flex flex-col md:flex-row items-center justify-between px-4 sm:px-6 py-4 border-b border-gray-700">
@@ -59,16 +68,18 @@ const Footer = () => {
             tomorrow’s world — AI, blockchain, quantum computing, and more.
           </p>
         </div>
-
         <div>
           <h6 className="uppercase font-bold mb-4 text-lg text-white">
-            Company
+            Quick Links
           </h6>
-          {["Services", "About Us", "Careers", "Blog"].map((item) => (
-            <p key={item}>
-              <a href="#" className="hover:text-white transition duration-200">
-                {item}
-              </a>
+          {links.map((item) => (
+            <p key={item.name}>
+              <Link
+                to={item.path}
+                className="hover:text-white transition duration-200"
+              >
+                {item.name}
+              </Link>
             </p>
           ))}
         </div>
