@@ -13,9 +13,12 @@ const WorkingHours = () => {
       <div className=" flex mt-5 md:flex-row flex-col place-content-around">
         <div className="text-center ">
           <h6 className="text-2xl font-semibold mt-10 mb-4">Future Tech</h6>
-          <p>120 32 Westwinds Cres NE, Calgary, AB, Canada, Alberta</p>
+          <p>
+            {" "}
+            32 Westwinds Crescent NE #120, T3J 5L3, Calgary, AB, Canada, Alberta
+          </p>
           <p>futuretech934@gmail.com</p>
-          <p>+1 587-432-5466</p>
+          <p>(368) 299-7057</p>
         </div>
         <div className="text-center md:text-left">
           <h6 className="text-2xl font-semibold mt-10 mb-4">Hours</h6>
