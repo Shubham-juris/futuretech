@@ -108,11 +108,11 @@ const Footer = () => {
           </h6>
           <p className="mb-2 flex items-center">
             <FontAwesomeIcon icon={faHome} className="mr-2" />
-     32 Westwinds Crescent NE #120, T3J 5L3, Calgary, AB, Canada, Alberta
+     32 Westwinds Crescent NE #120, Calgary, AB T3J 5L3
           </p>
           <p className="mb-2 flex items-center">
             <FontAwesomeIcon icon={faEnvelope} className="mr-2" />
-            futuretech934@gmail.com
+            info@thefuturetech.ca
           </p>
           <p className="flex items-center">
             <FontAwesomeIcon icon={faPhone} className="mr-2" />
