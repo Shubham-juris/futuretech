@@ -15,9 +15,9 @@ const WorkingHours = () => {
           <h6 className="text-2xl font-semibold mt-10 mb-4">Future Tech</h6>
           <p>
             {" "}
-            32 Westwinds Crescent NE #120, T3J 5L3, Calgary, AB, Canada, Alberta
+            32 Westwinds Crescent NE #120, Calgary, AB T3J 5L3
           </p>
-          <p>futuretech934@gmail.com</p>
+          <p>info@thefuturetech.ca</p>
           <p>(368) 299-7057</p>
         </div>
         <div className="text-center md:text-left">
