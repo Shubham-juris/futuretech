@@ -26,17 +26,17 @@ const Footer = () => {
           {[
             {
               icon: faFacebookF,
-              href: "https://www.facebook.com/profile.php?id=100094671232437",
+              href: "https://www.facebook.com/futuretechsol/",
               color: "text-blue-600",
             },
             {
               icon: faTwitter,
-              href: "https://twitter.com",
+              href: "https://x.com/future_tech_ca",
               color: "text-sky-400",
             },
             {
               icon: faInstagram,
-              href: "https://instagram.com",
+              href: "https://www.instagram.com/future_tech.ca/",
               color: "text-pink-500",
             },
             {
